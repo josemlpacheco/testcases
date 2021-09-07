@@ -1,4 +1,4 @@
-var xpathSelector = function (selector) {
+let xpathSelector = function (selector) {
     return {
         selector: selector,
         locateStrategy: 'xpath'

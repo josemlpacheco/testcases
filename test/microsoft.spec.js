@@ -5,12 +5,12 @@ module.exports = {
     'Search Xbox': function (browser) {
         let searchXbox = browser.page.searchXbox();
         searchXbox.navigate()
-            .assert.visible('btnSearch')
+            .assert.visible('@btnSearch')
             .click('@btnSearch')
             .assert.visible('@inputSearch')
             .setValue('@inputSearch','xbox series x')
-            .useXpath.click('@firstOption')
-            .assert.urlContains('@urlExpect')
+            .click('@firstOption')
+            .assert.urlContains('https://www.xbox.com/en-US/consoles/xbox-series-x')
         // browser
         //     .url("https://www.microsoft.com/en-us/")
         //     .assert.visible("#search")
@@ -23,10 +23,10 @@ module.exports = {
     'Verify information': function(browser) {
         let verifyInf = browser.page.verifyInformation();
         verifyInf
-            .assert.not.visible('overviewItem',results => {
+            .assert.not.visible('@overviewItem',results => {
                 if(results.value) {
-                    browser
-                        .useXpath.click('@menuBtn')
+                    verifyInf
+                        .click('@menuBtn')
                         .assert.visible('@overviewItem')
                         .assert.visible('@gamesItem')
                         .assert.visible('@specsItem')
@@ -35,11 +35,11 @@ module.exports = {
 
                 }
             })
-            .useXpath().click('@availabilityBtn')
-            .useXpath().click('@firstImg')
-            .useXpath().click('@secondImg')
-            .useXpath().click('@thirdImg')
-            .useXpath().click('@fourthImg');
+            .click('@availabilityBtn')
+            .click('@firstImg')
+            .click('@secondImg')
+            .click('@thirdImg')
+            .click('@fourthImg');
 
         // browser
         //     .assert.not.visible("//a[@href='#overview']",results => {

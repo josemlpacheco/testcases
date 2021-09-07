@@ -5,9 +5,9 @@
 
   <testsuite name="amazon.spec"
     errors="0" failures="0" hostname="" id="" package="amazon.spec" skipped="0"
-    tests="1" time="8.702" timestamp="">
+    tests="1" time="10.51" timestamp="">
   
-    <testcase name="Sign up Amazon" classname="amazon.spec" time="8.702" assertions="9">
+    <testcase name="Sign up Amazon" classname="amazon.spec" time="10.51" assertions="9">
 
     
 
